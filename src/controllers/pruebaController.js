@@ -14,3 +14,7 @@ exports.prueba = async (req,res) => {
 
     res.render('home/index');
 }
+exports.iniciar = (req,res)=>{
+
+    console.log('hi')
+}
