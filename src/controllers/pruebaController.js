@@ -16,5 +16,6 @@ exports.prueba = async (req,res) => {
 }
 exports.iniciar = (req,res)=>{
 
-    console.log('hi')
+    console.log('hi');
+    res.status(200).json({ msg: 'Ya funciono la api' });
 }
