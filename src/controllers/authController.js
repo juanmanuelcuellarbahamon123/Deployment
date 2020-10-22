@@ -17,11 +17,11 @@ exports.registrarUsuario = async (req,res) => {
         id_rol: 2
     }
     let sql = "INSERT INTO usuarios SET ?";
-    await mysql.query(sql, newUser, (err, resultado) => {
+    await mysql.query(sql, newUser, (err) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            res.status(200).json({ msg: resultado });
+            res.redirect('/');
         }
     });
 }
