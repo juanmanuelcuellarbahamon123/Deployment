@@ -30,6 +30,8 @@ app.use((req, res, next) => {
 });
 
 app.use(require('./routes/auth'));
+app.use(require('./routes/usuario'));
+app.use(require('./routes/admin'));
 
 app.listen(PORT, () => {
     console.log('Localhost://' + PORT);
