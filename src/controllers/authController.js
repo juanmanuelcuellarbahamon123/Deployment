@@ -13,7 +13,9 @@ exports.registrarUsuario = async (req,res) => {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        id_rol: 2
     }
     await mysql.query("INSERT INTO usuarios SET ?", [newUser]);
+    res.redirect('/');
 }
