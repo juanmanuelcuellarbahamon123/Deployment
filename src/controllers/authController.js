@@ -8,7 +8,7 @@ exports.formRegistro = (req,res) => {
     res.render('auth/registro');
 }
 
-exports.registrarUsuario = (req,res) => {
+exports.registrarUsuario = async (req,res) => {
     let newUser = {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
@@ -17,7 +17,7 @@ exports.registrarUsuario = (req,res) => {
         id_rol: 2
     }
     let sql = "INSERT INTO usuarios SET ?";
-    mysql.query(sql, newUser, (err, resultado) => {
+    await mysql.query(sql, newUser, (err, resultado) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
