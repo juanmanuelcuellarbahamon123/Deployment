@@ -29,7 +29,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(require('./routes/prueba'));
+app.use(require('./routes/auth'));
 
 app.listen(PORT, () => {
     console.log('Localhost://' + PORT);
