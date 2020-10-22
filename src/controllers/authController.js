@@ -9,5 +9,11 @@ exports.formRegistro = (req,res) => {
 }
 
 exports.registrarUsuario = async (req,res) => {
-    await mysql.query("INSERT INTO usuarios(nombre, apellido, correo, password) SET = ?", req.body);
+    let newUser = {
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        email: req.body.email,
+        password: req.body.password
+    }
+    await mysql.query("INSERT INTO usuarios SET ?", [newUser]);
 }
