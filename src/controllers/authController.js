@@ -38,7 +38,7 @@ exports.ingresarUsuario = async (req,res) => {
             if(resultado[0].id_rol === 1) {
                 res.redirect('/admin');
             } else {
-                console.log('usuario');
+                res.redirect('/usuario');
             }
         }
     });
