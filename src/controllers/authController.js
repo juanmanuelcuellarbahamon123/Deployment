@@ -21,8 +21,8 @@ exports.registrarUsuario = async (req,res) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            res.redirect('/');
-            res.status(200).json({ msg: "El usuario se ha registrado correctamente" });
+            res.status(200).json({ msg: resultado });
         }
     });
+    res.redirect('/');
 }
