@@ -12,7 +12,7 @@ exports.registrarUsuario = async (req,res) => {
     let newUser = {
         nombre: req.body.nombre,
         apellido: req.body.apellido,
-        email: req.body.email,
+        correo: req.body.email,
         password: req.body.password,
         id_rol: 2
     }
