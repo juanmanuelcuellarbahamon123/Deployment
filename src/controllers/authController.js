@@ -17,7 +17,7 @@ exports.registrarUsuario = (req,res) => {
         id_rol: 2
     }
     let sql = "INSERT INTO usuarios SET ?";
-    let query = mysql.query(sql, newUser, (err, resultado) => {
+    mysql.query(sql, newUser, (err, resultado) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
