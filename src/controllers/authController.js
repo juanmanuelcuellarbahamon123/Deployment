@@ -25,3 +25,18 @@ exports.registrarUsuario = async (req,res) => {
         }
     });
 }
+
+exports.ingresarUsuario = async (req,res) => {
+    let user = {
+        correo: req.body.email,
+        password: req.body.password
+    }
+    let sql = "SELECT id_rol FROM usuarios WHERE correo = ? AND password = ?";
+    await mysql.query(sql, user, (err, resultado) => {
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            console.log(resultado);
+        }
+    });
+} 
