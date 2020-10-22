@@ -17,8 +17,11 @@ exports.registrarUsuario = async (req,res) => {
         id_rol: 2
     }
     await mysql.query("INSERT INTO usuarios SET ?", newUser, (err, resultado) => {
-        if(err) console.error(err);
-        console.log(resultado);
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            res.redirect('/');
+            res.status(200).json({ msg: "El usuario se ha registrado correctamente" });
+        }
     });
-    res.redirect('/');
 }
