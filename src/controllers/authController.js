@@ -16,6 +16,9 @@ exports.registrarUsuario = async (req,res) => {
         password: req.body.password,
         id_rol: 2
     }
-    await mysql.query("INSERT INTO usuarios SET ?", [newUser]);
+    await mysql.query("INSERT INTO usuarios SET ?", [newUser])
+        .catch(err => {
+            console.log(error);
+        });
     res.redirect('/');
 }
