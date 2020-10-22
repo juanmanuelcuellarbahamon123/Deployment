@@ -21,8 +21,7 @@ exports.registrarUsuario = async (req,res) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            res.redirect('/');
-            console.log(resultado);
+            res.status(200).json({ msg: resultado });
         }
     });
 }
