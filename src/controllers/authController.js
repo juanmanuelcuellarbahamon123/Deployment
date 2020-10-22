@@ -36,9 +36,9 @@ exports.ingresarUsuario = async (req,res) => {
             res.status(401).json({ err: err });
         } else {
             if(resultado[0].id_rol === 1) {
-                res.redirect('/admin');
+                console.log('admin');
             } else {
-                res.redirect('/usuario');
+                console.log('usuario');
             }
         }
     });
