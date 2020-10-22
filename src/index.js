@@ -29,7 +29,7 @@ app.use((req, res, next) => {
     next();
 });
 
-//app.use(require('./routes/admin'));
+app.use(require('./routes/admin'));
 app.use(require('./routes/auth'));
 app.use(require('./routes/usuario'));
 
