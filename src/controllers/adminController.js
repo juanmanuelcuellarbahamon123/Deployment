@@ -13,6 +13,7 @@ exports.usuarios = async (req,res) => {
         } else {
             console.log(resultado);
             res.render('admin/usuarios');
+            //
         }
     });
 }
