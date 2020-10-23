@@ -11,3 +11,4 @@ exports.usuarios = (req,res) => {
 exports.productos = (req,res) => {
     res.render('admin/productos');
 }
+
