@@ -4,7 +4,7 @@ exports.vistaAdmin = (req,res) => {
     res.render('admin/index');
 }
 
-exports.usuarios = (req,res) => {
+exports.usuarios = async (req,res) => {
 
     let sql = "SELECT * FROM usuarios";
     await mysql.query(sql, newUser, (err, resultado) => {
