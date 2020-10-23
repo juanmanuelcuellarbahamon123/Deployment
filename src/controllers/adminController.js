@@ -15,8 +15,6 @@ exports.usuarios = (req,res) => {
             res.render('admin/usuarios')
         }
     });
-
-    res.render('admin/usuarios');
 }
 
 exports.productos = (req,res) => {
