@@ -6,16 +6,15 @@ exports.vistaAdmin = (req,res) => {
 
 exports.usuarios = (req,res) => {
 
-    let sql = "INSERT INTO usuarios SET ?";
-    const usuarios = await mysql.query(sql, newUser, (err) => {
+    let sql = "SELECT * FROM usuarios";
+    await mysql.query(sql, newUser, (err, resultado) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            res.redirect('/');
+            console.log(resultado);
+            res.render('admin/usuarios')
         }
     });
-
-    console.log(usuarios);
 
     res.render('admin/usuarios');
 }
